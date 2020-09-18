@@ -1,0 +1,19 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding: 50px;
+
+  font-size: 22px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item:not(:last-child) {
+  padding-bottom: 15px;
+}

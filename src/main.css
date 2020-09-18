@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+input {
+  all: unset;
+  border: 1px solid rgb(194, 194, 194);
+}
+button {
+  all: unset;
+  padding: 7px 20px;
+  background-color: #5aa1db;
+  border: 1px solid #5aa1db;
+  border-radius: 10px;
+  width: 120px;
+  text-align: center;
+  margin-left: 40px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

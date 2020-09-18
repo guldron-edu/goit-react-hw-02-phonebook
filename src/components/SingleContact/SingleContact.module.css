@@ -1,0 +1,7 @@
+.text::after {
+  display: block;
+  content: "";
+  height: 1px;
+  width: 400px;
+  background-color: #000;
+}
