@@ -61,8 +61,8 @@ export default class App extends Component {
       <>
         <h1>Phonebook</h1>
         <InputForm addNewContact={this.addNewContact} />
-        <h2>Contacts</h2>
 
+        {this.state.contacts.length > 0 && <h2>Contacts</h2>}
         {this.state.contacts.length > 1 && (
           <Filter inputTracking={this.inputFilterTracking} />
         )}
