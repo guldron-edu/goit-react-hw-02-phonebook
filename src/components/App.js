@@ -19,11 +19,15 @@ export default class App extends Component {
 
     this.checkExistingName(name)
       ? alert(name + ` is already in contacts`)
-      : this.setState((prevState) => {
-          return {
-            contacts: [...prevState.contacts, tempContact],
-          };
-        });
+      : this.pushToContacts(tempContact);
+  };
+
+  pushToContacts = (contact) => {
+    this.setState((prevState) => {
+      return {
+        contacts: [...prevState.contacts, contact],
+      };
+    });
   };
 
   inputFilterTracking = (ev) => {
@@ -42,9 +46,6 @@ export default class App extends Component {
     return this.state.contacts
       .map((contact) => contact.name.toLowerCase())
       .includes(targetName.toLowerCase());
-    // return this.state.contacts.filter(
-    //   (contact) => contact.name.toLowerCase() === targetName.toLowerCase()
-    // );
   };
 
   deleteContact = (targetId) => {
