@@ -44,8 +44,8 @@ export default class App extends Component {
 
   checkExistingName = (targetName) => {
     return this.state.contacts
-      .map((contact) => contact.name.toLowerCase())
-      .includes(targetName.toLowerCase());
+      .map((contact) => contact.name.toLowerCase().trim())
+      .includes(targetName.toLowerCase().trim());
   };
 
   deleteContact = (targetId) => {
