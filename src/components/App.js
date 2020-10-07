@@ -17,9 +17,13 @@ export default class App extends Component {
       number,
     };
 
-    this.checkExistingName(name)
-      ? alert(name + ` is already in contacts`)
-      : this.pushToContacts(tempContact);
+    this.checkNameAndAdd(name, tempContact);
+  };
+
+  checkExistingName = (targetName) => {
+    return this.state.contacts
+      .map((contact) => contact.name.toLowerCase().trim())
+      .includes(targetName.toLowerCase().trim());
   };
 
   pushToContacts = (contact) => {
@@ -28,6 +32,12 @@ export default class App extends Component {
         contacts: [...prevState.contacts, contact],
       };
     });
+  };
+
+  checkNameAndAdd = (name, tempContact) => {
+    this.checkExistingName(name)
+      ? alert(name + ` is already in contacts`)
+      : this.pushToContacts(tempContact);
   };
 
   inputFilterTracking = (ev) => {
@@ -40,12 +50,6 @@ export default class App extends Component {
         this.state.filter.toLowerCase()
       )
     );
-  };
-
-  checkExistingName = (targetName) => {
-    return this.state.contacts
-      .map((contact) => contact.name.toLowerCase().trim())
-      .includes(targetName.toLowerCase().trim());
   };
 
   deleteContact = (targetId) => {
